@@ -1,1 +1,59 @@
+Portfolio 1 – Case Study Description
+DOCUMENT 01 · DATABASE DESIGN AND MODELLING
 
+Project Title: Design and Modelling of a Hospital/Clinic Management Database System
+
+Selected Organisation: PrimeCare Hospital
+
+1. Organisation Background
+
+PrimeCare Hospital is a fictional healthcare institution established to provide medical services to individuals and families. The hospital offers healthcare services such as patient consultations, medical diagnosis, treatment, prescription administration and laboratory investigations.
+
+The hospital attends to different categories of patients and maintains records of their personal information, medical consultations, appointments, prescriptions and laboratory results.
+
+To improve the management of its daily operations, the hospital requires a centralised database system that will allow authorised healthcare personnel to store, manage, update and retrieve patient-related information efficiently.
+2. Nature of Business / System
+PrimeCare Hospital operates within the healthcare sector, providing medical consultations, diagnosis, treatment and laboratory services.
+
+The proposed Hospital Management Database System will support the hospital's daily activities by providing a structured platform for managing patient information and medical records.
+
+The system will manage the following activities:
+- Patient registration and record management.
+- Doctor information and specialisations.
+- Appointment scheduling and management.
+- Medical diagnosis recording.
+- Prescription management.
+- Laboratory investigation and result management.
+- Retrieval of patients' medical histories.
+3. Database Users
+
+The proposed database system will be accessed by different categories of authorised users.
+Database user	Responsibilities
+Administrator	Manages database records and user access.
+Doctors	Access patient records, record diagnoses and prescribe medication.
+Nurses	Assist with patient information and appointment records.
+Receptionists	Register patients and schedule appointments.
+Laboratory personnel	Record laboratory investigations and test results.
+Pharmacists	Access and manage prescription information.
+
+4. Major Data Stored
+
+The database will store the following categories of information:
+Data category	Information stored
+Patient records	Patient ID, name, date of birth, gender, address and contact details.
+Doctor records	Doctor ID, name, speciality and contact information.
+Appointment records	Appointment ID, patient ID, doctor ID, date, time and status.
+Diagnosis records	Diagnosis ID, patient ID, doctor ID, diagnosis description and date.
+Prescription records	Prescription ID, patient ID, doctor ID, medication, dosage and date.
+Laboratory records	Laboratory ID, patient ID, test type, test result and date.
+
+5. Key Database Operations
+
+The proposed database system will support the following operations:
+1. Patient registration: Register new patients and store their personal information.
+2. Appointment booking: Schedule appointments between patients and doctors.
+3. Doctor assignment: Associate appointments with the appropriate doctors.
+4. Diagnosis management: Record and retrieve medical diagnoses.
+5. Prescription management: Store and retrieve prescriptions issued by doctors.
+6. Laboratory management: Record laboratory investigations and their results.
+7. Medical history retrieval: Retrieve patients' previous appointments, diagnoses, prescriptions and laboratory records.
