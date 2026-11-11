@@ -23,18 +23,17 @@ USE primecare_hospital;
 
 -- ------------------------------------------------------------
 -- 1. PATIENTS
--- Stores the personal and contact details of registered patients.
 -- One patient can have many appointments.
 -- ------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS patients (
-    patient_id INT UNSIGNED AUTO_INCREMENT COMMENT 'Unique patient ID',
-    first_name VARCHAR(50) NOT NULL COMMENT 'First name',
-    last_name VARCHAR(50) NOT NULL COMMENT 'Last name',
-    date_of_birth DATE NOT NULL COMMENT 'Date of birth',
-    gender VARCHAR(15) NOT NULL COMMENT 'Patient gender',
-    phone VARCHAR(20) COMMENT 'Contact number',
-    email VARCHAR(100) COMMENT 'Email address',
-    address VARCHAR(255) COMMENT 'Residential address',
+    patient_id INT UNSIGNED AUTO_INCREMENT,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    date_of_birth DATE NOT NULL,
+    gender VARCHAR(15) NOT NULL,
+    phone VARCHAR(20),
+    email VARCHAR(100),
+    address VARCHAR(255),
 
     CONSTRAINT pk_patients PRIMARY KEY (patient_id),
     CONSTRAINT uq_patients_email UNIQUE (email),
@@ -44,14 +43,13 @@ CREATE TABLE IF NOT EXISTS patients (
 
 -- ------------------------------------------------------------
 -- 2. DOCTORS
--- Stores the names and professional details of hospital doctors.
 -- One doctor can attend many appointments.
 -- ------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS doctors (
-    doctor_id INT UNSIGNED AUTO_INCREMENT COMMENT 'Unique doctor ID',
+    doctor_id INT UNSIGNED AUTO_INCREMENT,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
-    speciality VARCHAR(100) NOT NULL COMMENT 'Doctor medical speciality',
+    speciality VARCHAR(100) NOT NULL,
     phone VARCHAR(20),
     email VARCHAR(100),
 
@@ -61,18 +59,17 @@ CREATE TABLE IF NOT EXISTS doctors (
 
 -- ------------------------------------------------------------
 -- 3. APPOINTMENTS
--- Connects each patient to the doctor they are scheduled to see.
 -- Each appointment belongs to one patient and one doctor.
 -- A patient and a doctor can each have many appointments.
 -- ------------------------------------------------------------
 CREATE TABLE IF NOT EXISTS appointments (
-    appointment_id INT UNSIGNED AUTO_INCREMENT COMMENT 'Unique appointment ID',
-    patient_id INT UNSIGNED NOT NULL COMMENT 'Patient linked to appointment',
-    doctor_id INT UNSIGNED NOT NULL COMMENT 'Doctor assigned to appointment',
-    appointment_date DATE NOT NULL COMMENT 'Appointment date',
-    appointment_time TIME NOT NULL COMMENT 'Appointment time',
-    status VARCHAR(30) NOT NULL DEFAULT 'Scheduled' COMMENT 'Appointment status',
-    reason VARCHAR(255) COMMENT 'Reason for appointment',
+    appointment_id INT UNSIGNED AUTO_INCREMENT,
+    patient_id INT UNSIGNED NOT NULL,
+    doctor_id INT UNSIGNED NOT NULL,
+    appointment_date DATE NOT NULL,
+    appointment_time TIME NOT NULL,
+    status VARCHAR(30) NOT NULL DEFAULT 'Scheduled',
+    reason VARCHAR(255),
 
     CONSTRAINT pk_appointments PRIMARY KEY (appointment_id),
 
@@ -94,3 +91,6 @@ CREATE TABLE IF NOT EXISTS appointments (
     INDEX idx_appointments_patient (patient_id),
     INDEX idx_appointments_doctor (doctor_id),
     INDEX idx_appointments_date (appointment_date)
+) ENGINE = InnoDB;
+
+-- ------------------------------------------------------------
